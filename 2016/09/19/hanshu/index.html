@@ -1,315 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="函数相关的及周边问题总结梳理​          1- 函数的作用
-​                + 基本定义:把一段功能性的代码封装到函数中,以实现复用的效果,在要使用的时候,直接调用这个函数就好了
-​              + 后期还会接触函数吗?
-​                  ">
-  
+extends ./_layout.pug
 
-  
-  
-  
-  
-  
-  
-  <title>hanshu | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="函数相关的及周边问题总结梳理​          1- 函数的作用 ​                + 基本定义:把一段功能性的代码封装到函数中,以实现复用的效果,在要使用的时候,直接调用这个函数就好了 ​              + 后期还会接触函数吗? ​                    - 现在急于js封装的库,或者是插件,都是用函数封装的代码 ​                +">
-<meta name="keywords" content="什么是函数">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hanshu">
-<meta property="og:url" content="http://yoursite.com/2016/09/19/hanshu/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="函数相关的及周边问题总结梳理​          1- 函数的作用 ​                + 基本定义:把一段功能性的代码封装到函数中,以实现复用的效果,在要使用的时候,直接调用这个函数就好了 ​              + 后期还会接触函数吗? ​                    - 现在急于js封装的库,或者是插件,都是用函数封装的代码 ​                +">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-19T13:12:02.032Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hanshu">
-<meta name="twitter:description" content="函数相关的及周边问题总结梳理​          1- 函数的作用 ​                + 基本定义:把一段功能性的代码封装到函数中,以实现复用的效果,在要使用的时候,直接调用这个函数就好了 ​              + 后期还会接触函数吗? ​                    - 现在急于js封装的库,或者是插件,都是用函数封装的代码 ​                +">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+block content
+  div.post
+    - var fa_prefix = theme.fa_prefix || 'fa'
 
-  
-  <!-- baidu webmaster push -->
-  <script src="//push.zhanzhang.baidu.com/push.js"></script>
-</head></html>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="Hexo" rel="home">Hexo</a>
-      </h1>
-      
-        <h2 class="site-description hitokoto"></h2>
-        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
-      
-    </hgroup>
+    include ./_mixins/post-header.pug
+    include ./_mixins/gallery.pug
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
-                
-                </ul>
-            </div>
-    </nav>
-</header>
+    +postHeader(page)
 
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-hanshu" class="post-hanshu post type-post status-publish format-standard hentry">
-    <!---->
+    div.post-body
+      if page.photos && page.photos.length
+        +gallery(page)
+      != page.content
 
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title article-title">
-      hanshu
-    </h1>
-  
+    footer.post-footer
+      if theme.post_widget.end_text.enable
+        div.post-end
+          span= "------ "
+          span= __("post.end")
+          span= " ------"
 
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/09/19/hanshu/" data-id="ck0ths5yu0000rstwiwb9rkrv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
+      if !(page.copyright === false) && (theme.creative_commons.enable && theme.creative_commons.post)
+        include ./_partials/widgets/copyright.pug
 
-    <div class="entry-content">
-      
-        <h3 id="函数相关的及周边问题总结梳理"><a href="#函数相关的及周边问题总结梳理" class="headerlink" title="函数相关的及周边问题总结梳理"></a>函数相关的及周边问题总结梳理</h3><p>​          <strong>1- 函数的作用</strong></p>
-<p>​                + 基本定义:把一段功能性的代码封装到函数中,以实现复用的效果,在要使用的时候,直接调用这个函数就好了</p>
-<p>​              + 后期还会接触函数吗?</p>
-<p>​                    - 现在急于js封装的库,或者是插件,都是用函数封装的代码</p>
-<p>​                + 工作中:</p>
-<p>​                    - 团队需要结合实际业务需求,封装一个公用的库,或者是插件的时候,会用到函数封装</p>
-<p>​            <strong>2- 创建函数的方式</strong></p>
-<p>​                + 函数声明</p>
-<p>​                    - function fn () {} fn();</p>
-<p>​                        - 后边我们会经常使用这种方式创建函数</p>
-<p>​                + 函数表达式</p>
-<p>​                    - var fn = function () {};</p>
-<p>​                        - 看一个具体的使用场景</p>
-<p>​                + 匿名函数</p>
-<p>​                    - (function () {})();</p>
-<p>​                        - 只能执行一次</p>
-<p>​            <strong>3- 函数的参数</strong></p>
-<p>​                + 形参</p>
-<p>​                    - 形参就是形式上的参数,作用就是用来接收实参传递给具体的数值</p>
-<p>​                    - function fn (形参的位置) {} fn()</p>
-<p>​                    - 注意的问题:</p>
-<p>​                        - 当实参没有传递给形参具体数值的时候,就会报出undefined</p>
-<p>​                        - 实参和形参的个数需要保持一致,当形参多于实参的时候,就会产生undefined</p>
-<p>​                + 实参</p>
-<p>​                    - 实参就是在函数调用的时候,传递给形参的一个具体数值,可以是字符串,数组….</p>
-<p>​                    - function fn () {} fn(实参的位置);</p>
-<p>​                + 函数中的形参是属于全局下的还是局部的??</p>
-<p>​                    - 形参是属于函数内部声明的变量,故在函数外部无法访问</p>
-<p>​            <strong>4- 函数的返回值以及函数的状态</strong></p>
-<p>​                + 函数状态:</p>
-<p>​                    - 有返回值的函数</p>
-<p>​                    - 无返回值的函数</p>
-<p>​                + 函数中声明了变量,接收了形参传入的值,如果没有return,就会报出undefined</p>
-<p>​                + 如果使用了return,但是没有明确的返回值,也是undefined</p>
-<p>​                + 如果使用return,后续的代码将不再执行’</p>
-<p>​                + 函数的几种状态(了解):</p>
-<p>​                    - 有参数无返回值的函数</p>
-<p>​                    - 有返回值无参数的函数</p>
-<p>​                    - 无参数无返回值的函数</p>
-<p>​                    - 有参数有返回值的函数</p>
-<p>​                + return后面还可以去写一个函数</p>
-<p>​                    - 这样的函数,称之为闭包函数</p>
-<p>​                    - js高级阶段会讲到闭包函数,是一个重点(较为抽象)</p>
-<p>​                    - 补充:我已经说了,到时候你看着办吧~~;</p>
-<p>​            <strong>5- 作用域以及作用域链</strong></p>
-<p>​                + 全局作用域</p>
-<p>​                    - 在函数外部声明的变量都是属于全局下的变量</p>
-<p>​                + 局部作用域</p>
-<p>​                    - 在函数内部声明的变量就是属于局部变量</p>
-<p>​                + 注意事项:</p>
-<p>​                    - 在函数内部可以访问全局下的变量</p>
-<p>​                    - 但是在全局下是无法访问到函数内部声明的变量</p>
-<p>​                + 小小的拓展:</p>
-<p>​                    - 在全局下声明了一个变量就是在全局最大的window对象上面,新添加了一属性</p>
-<p>​                + 作用域链</p>
-<p>​                    - 在函数中定义了一个变量,如果当前作用域下存在,那么就输出,否则会沿着当前作用域依次向上查找,这个查找的过程形成了一个链式结构,我们把这个链式结构,叫做’作用域链’</p>
-<p>​                    - 注意:如果在全局下还没有找到,那么就直接报错</p>
-<p>​            <strong>6- js的预解析机制</strong></p>
-<p>****                + 预解析定义:</p>
-<p>​                    - 就是js解析过程中的一种机制,会把变量和函数声明进行提升</p>
-<p>​                    - 注意:函数声明高于变量声明</p>
-<p>​                + 注意事项:</p>
-<p>​                    - 切记不要重复使用一个函数名字,否则后者会把前者重新赋值</p>
-<p>​                    - 变量名和函数名字不要冲突</p>
-<p>​                    - 实际开发中:</p>
-<p>​                        - 一个单位/项目中会提前规范好命名方式,例如:变量名称,函数名称</p>
-<p>​                + 解析变量的时候,声明被提升了,但是后面的赋值不会进行提升,所以会报出undefined</p>
-<p>​                + 函数声明被解析的时候,会提升到最前面,但是不会调用</p>
-<p>​                + 在函数中使用变量,切记,切记一定要用var,否则就会被解析成一个全局下的变量</p>
-<p>​                + 补充问题:</p>
-<p>​                    - 预解析,说白了就是一个坑,并且是一个大大坑,后续你用的时候,学会主动的规避这些问题就好了</p>
-<p>​                    - 但是,建议到课程后去,去刷一些预解析相关的面试题,例如(鹅厂,某东,某想,鹅厂的第二厂)</p>
-<p>​            <strong>7- 函数中的arguments对象</strong></p>
-<p>​                + 本身是一个伪数组对象</p>
-<p>​                    - 因为可以循环遍历,但是没有真正数组对象上面的方法</p>
-<p>​                + 存在于函数中的一个较为特殊的对象</p>
-<p>​                    - 本身它还有属于自己的方法</p>
-<p>​                + 可以在高程中查阅,或者MDN</p>
-<p>​                + 作用:</p>
-<p>​                    - 用于接收实参传递进来的数据</p>
-<p>​                + 在ES6中,有一个叫做箭头函数的函数,这个箭头函数中,就没有这个arguments对象</p>
-<p>​                + 记住了,能够说明它的使用场景,以及主要作用,就行</p>
-<p>​            <strong>8- 函数中的this出现的场景</strong></p>
-<p>​                + 在全局下定义的函数,它的this指向的就是全局最大的对象window</p>
-<p>​                + 在对象的方法中,this指向的就是最后的调用者</p>
-<p>​                + 在BOM的定时器中,this指向的也还是window</p>
-<p>​                + 在DOM中的事件处理函数中,this指向的是事件源本身</p>
-<p>​                + 在ES6的箭头函数中,由于箭头函数没有自己的this,它的this来自于外部对象的this</p>
-<p>​                + 在nodejs阶段会讲es6,到时候,哼哼~好好听,来自于2019-08-16 :15:50</p>
-<p>​            <strong>9- 创建对象的3种方式</strong></p>
-<p>​                + 字面量方式创建对象</p>
-<p>​                + 工厂模式创建对象</p>
-<p>​                + 自定义构造函数创建对象</p>
-<p>​            <strong>10- new到底干了几件事</strong></p>
-<p>​                + 创建了一个新的空对象</p>
-<p>​                + 将this指向这个新的空对象</p>
-<p>​                + 把属性和方法给到这个新的对象上</p>
-<p>​                + 返回这个对象</p>
+      if theme.post_widget.tags
+        if page.tags && page.tags.length > 0
+          div.post-tags
+            each tag in page.tags.data
+              span.post-tags-item
+                i.post-tags-item__i(class=`${fa_prefix} fa-tags`)
+                a.post-tags-item__a(href=tag.permalink)= tag.name
 
-      
-    </div><!-- .entry-content -->
+      if !(page.reward === false) && (theme.reward && theme.reward.enable)
+        include ./_partials/widgets/reward.pug
 
-    <footer class="entry-meta">
-    <a href="/2016/09/19/hanshu/">
-    <time datetime="2016-09-19T13:05:45.000Z" class="entry-date">
-        2016-09-19
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/什么是函数/">什么是函数</a></li></ul>
-
-    </footer>
-</article>
-
-
-    
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
-    
-        <span class="nav-previous"><a href="/2019/09/19/hello-world/" rel="prev"><span class="meta-nav">←</span> Hello World</a></span>
-    
-    
-        <span class="nav-next"><a href="/2016/09/17/阶段学习2/" rel="next">阶段学习2 <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
-
-
-
-
-
-
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="搜索" />
-    </div>
-</form></aside>
-  
-    
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
-        
-          <li>
-            <a href="/2019/09/19/背景/">背景</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/19/一个背景添加方法/">一个背景添加方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/19/test/">test</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/19/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/19/hanshu/">hanshu</a>
-          </li>
-        
-      </ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/什么是函数/">什么是函数</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="/tags/什么是函数/" style="font-size: 10px;">什么是函数</a>
-    </div>
-  </aside>
-
-  
-</div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2019 John Doe
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
-
-<script src="/js/jquery-3.3.1.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-<script src="/js/navigation.js"></script>
-
-<div id="bg"></div>
-
-  </div>
-</body>
-</html>
+      include ./_partials/widgets/pagination.pug
