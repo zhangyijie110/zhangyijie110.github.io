@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>文章 | Hexo</title>
-  <meta name="keywords" content>
-  <meta name="description" content="文章 | Hexo">
+  <title>ajax | Hexo</title>
+  <meta name="keywords" content=" ajax ">
+  <meta name="description" content="ajax | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Jquery  1.  Jquery是做什么的？ 取得文档中的元素  修改页面的外观  改变文档的内容  响应用户的交互操作  为页面添加动态效果  无需刷新页面从服务器获取信息  简化常见的JavaScript任务   2   Jquery如何处理缓存？答：要处理缓存就是禁用浏览器缓存. 1）通过$.post()方法来获取数据，那么默认就是禁用缓存的。 2）通过$.get()方法来获取数据，可以">
 <meta name="keywords" content="jquery">
@@ -352,19 +352,31 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-文章" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ajax" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">文章</h1>
+        <h1 class="article-title">ajax</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="面试问题">面试问题</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">ajax</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-22 23:38:46'>2019-09-22 23:38</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-03 10:32:32'>2019-12-03 10:13</time>
         
     </div>
     <div class="article-meta">
@@ -386,7 +398,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-ajax中data有几种方式"><span class="toc-text">1.ajax中data有几种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Ajax请求状态码"><span class="toc-text">2. Ajax请求状态码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ajax和axios的区别"><span class="toc-text">3.ajax和axios的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-route与-router区别"><span class="toc-text">4. $route与$router区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-get请求与post请求的区别"><span class="toc-text">5. get请求与post请求的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-原生ajax创建的方式"><span class="toc-text">6. 原生ajax创建的方式</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -401,7 +413,47 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <center @[toc]><b style="font-size:30px; ">Ajax</b></center>
+
+<h2 id="1-ajax中data有几种方式"><a href="#1-ajax中data有几种方式" class="headerlink" title="1.ajax中data有几种方式"></a>1.ajax中data有几种方式</h2><p>1、json格式 </p>
+<p>2、拼接URL </p>
+<p>3、表单序列化为字符串</p>
+<h2 id="2-Ajax请求状态码"><a href="#2-Ajax请求状态码" class="headerlink" title="2. Ajax请求状态码"></a>2. Ajax请求状态码</h2><p>0 - (未初始化)还没有调用send()方法<br>1 - (载入)已调用send()方法，正在发送请求<br>2 - (载入完成)send()方法执行完成，<br>3 - (交互)正在解析响应内容<br>4 - (完成)响应内容解析完成，可以在客户端调用了</p>
+<h2 id="3-ajax和axios的区别"><a href="#3-ajax和axios的区别" class="headerlink" title="3.ajax和axios的区别"></a>3.ajax和axios的区别</h2><p>axios是通过promise实现对ajax技术的一种封装，就像jQuery实现ajax封装一样。<br>简单来说： ajax技术实现了网页的局部数据刷新，axios实现了对ajax的封装。<br><strong>axios是ajax ajax不止axios。</strong></p>
+<ul>
+<li><strong>Ajax</strong>：</li>
+</ul>
+<p>Ajax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种<strong>创建交互式网页应用的网页开发技术。</strong></p>
+<p>Ajax = 异步 JavaScript 和 XML（标准通用标记语言的子集）。</p>
+<p>Ajax 是一种用于创建快速动态网页的技术。</p>
+<p>Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</p>
+<p>通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
+<p>本身是针对MVC的编程,不符合现在前端MVVM的浪潮<br>基于原生的XHR开发，XHR本身的架构不清晰，已经有了fetch的替代方案<br>JQuery整个项目太大，单纯使用ajax却要引入整个JQuery非常的不合理（采取个性化打包的方案又不能享受CDN服务</p>
+<ul>
+<li><strong>Axios</strong></li>
+</ul>
+<p>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，本质上也是对原生XHR的封装</p>
+<p>1.从浏览器中创建 XMLHttpRequest<br>2.支持 Promise API<br>3.客户端支持防止CSRF<br>4.提供了一些并发请求的接口（重要，方便了很多的操作）<br>5.从 node.js 创建 http 请求<br>6.拦截请求和响应<br>7.转换请求和响应数据<br>8.取消请求<br>9.自动转换JSON数据<br><strong>PS:防止CSRF:就是让你的每个请求都带一个从cookie中拿到的key, 根据浏览器同源策略，假冒的网站是拿不到你cookie中得key的，这样，后台就可以轻松辨别出这个请求是否是用户在假冒网站上的误导输入，从而采取正确的策略。</strong></p>
+<h2 id="4-route与-router区别"><a href="#4-route与-router区别" class="headerlink" title="4. $route与$router区别"></a>4. $route与$router区别</h2><p>$route为当前router跳转对象里面可以获取name、path、query、params等</p>
+<p>$router为VueRouter实例，想要导航到不同URL，则使用$router.push方法</p>
+<h2 id="5-get请求与post请求的区别"><a href="#5-get请求与post请求的区别" class="headerlink" title="5. get请求与post请求的区别"></a>5. get请求与post请求的区别</h2><p>1.使用Get请求时,参数在URL中显示,而使用Post方式,则不会显示出来</p>
+<p>2.使用Get请求发送数据量小,Post请求发送数据量大</p>
+<p>3.GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息</p>
+<h2 id="6-原生ajax创建的方式"><a href="#6-原生ajax创建的方式" class="headerlink" title="6. 原生ajax创建的方式"></a>6. 原生ajax创建的方式</h2><ol>
+<li><p>创建 XMLHttpRequest 对象,也就是创建一个异步调用对象 </p>
+</li>
+<li><p>创建一个新的 HTTP 请求,并指定该 HTTP 请求的方法、URL 及验证信息 </p>
+</li>
+<li><p>设置响应 HTTP 请求状态变化的函数 </p>
+</li>
+<li><p>发送 HTTP 请求 </p>
+</li>
+<li><p>获取异步调用返回的数据 </p>
+</li>
+<li><p>使用 JavaScript 和 DOM 实现局部刷新</p>
+</li>
+</ol>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
     </div>
@@ -410,12 +462,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>文章</p>
+    <p><span class="copy-title">文章标题:</span>ajax</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="狮子花">狮子花</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-22, 23:38:46</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-22, 23:38:46</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/22/文章/" title="文章">http://zhangyijie110.github.io/2019/09/22/文章/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-03, 10:13:17</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-03, 10:32:32</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/03/ajax/" title="ajax">http://zhangyijie110.github.io/2019/12/03/ajax/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
