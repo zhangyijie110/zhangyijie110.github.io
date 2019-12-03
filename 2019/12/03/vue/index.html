@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>vue | Hexo</title>
+  <meta name="keywords" content=" vue ">
+  <meta name="description" content="vue | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Es6 ## **1.** [call和apply区别](https://www.cnblogs.com/WQLong/p/9019007.html)  call():使用其自有的实参列表作为函数的参数； apply()：要求以数组的形式传入参数。  2. 新增的数据类型及作用symbol 防止相同的属性名多次使用被覆盖问题 独一无二，创建两个Symbol变量，它们是不相等的 私有属性，借助Sym">
+<meta name="keywords" content="es6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Es6">
+<meta property="og:url" content="http://zhangyijie110.github.io/2019/12/03/Es6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Es6 ## **1.** [call和apply区别](https://www.cnblogs.com/WQLong/p/9019007.html)  call():使用其自有的实参列表作为函数的参数； apply()：要求以数组的形式传入参数。  2. 新增的数据类型及作用symbol 防止相同的属性名多次使用被覆盖问题 独一无二，创建两个Symbol变量，它们是不相等的 私有属性，借助Sym">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-03T06:04:20.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Es6">
+<meta name="twitter:description" content="Es6 ## **1.** [call和apply区别](https://www.cnblogs.com/WQLong/p/9019007.html)  call():使用其自有的实参列表作为函数的参数； apply()：要求以数组的形式传入参数。  2. 新增的数据类型及作用symbol 防止相同的属性名多次使用被覆盖问题 独一无二，创建两个Symbol变量，它们是不相等的 私有属性，借助Sym">
+
+
+<link rel="icon" href="/img/avatar.jpeg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpeg" />
+</a>
+<div class="author">
+    <span>狮子花</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/zhangyijie110" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:zhangyijiemz@163.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1109721716&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(12)</small></div></li>
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="面试题">面试题<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">hexo使用说明</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">es6</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">jquery</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">js</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">ajax</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">函数</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">阶段学习</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vue</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="工具 "
+           href="/2017/03/24/3-hexo快捷键说明/"
+           data-tag="hexo使用说明"
+           data-author="" >
+            <span class="post-title" title="3-hexo快捷键说明">3-hexo快捷键说明</span>
+            <span class="post-date" title="2017-03-24 16:45:00">2017/03/24</span>
+        </a>
+        
+        <a  class="面试题 "
+           href="/2019/12/03/Es6/"
+           data-tag="es6"
+           data-author="" >
+            <span class="post-title" title="Es6">Es6</span>
+            <span class="post-date" title="2019-12-03 10:46:20">2019/12/03</span>
+        </a>
+        
+        <a  class="面试题 "
+           href="/2019/12/03/Jquery/"
+           data-tag="jquery"
+           data-author="" >
+            <span class="post-title" title="Jquery">Jquery</span>
+            <span class="post-date" title="2019-12-03 09:03:31">2019/12/03</span>
+        </a>
+        
+        <a  class="面试题 "
+           href="/2019/12/03/JavaScript/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JavaScript">JavaScript</span>
+            <span class="post-date" title="2019-12-03 10:34:40">2019/12/03</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2017/03/23/3-hexo使用说明/"
+           data-tag="hexo使用说明"
+           data-author="" >
+            <span class="post-title" title="3-hexo使用说明">3-hexo使用说明</span>
+            <span class="post-date" title="2017-03-23 15:13:00">2017/03/23</span>
+        </a>
+        
+        <a  class="面试题 "
+           href="/2019/12/03/ajax/"
+           data-tag="ajax"
+           data-author="" >
+            <span class="post-title" title="ajax">ajax</span>
+            <span class="post-date" title="2019-12-03 10:13:17">2019/12/03</span>
+        </a>
+        
+        <a  class="面试题 "
+           href="/2019/12/02/html5面试问题/"
+           data-tag="html"
+           data-author="" >
+            <span class="post-title" title="html5面试问题">html5面试问题</span>
+            <span class="post-date" title="2019-12-02 15:22:27">2019/12/02</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2016/09/19/函数相关的及周边问题总结梳理/"
+           data-tag="函数"
+           data-author="" >
+            <span class="post-title" title="函数相关的及周边问题总结梳理">函数相关的及周边问题总结梳理</span>
+            <span class="post-date" title="2016-09-19 21:05:45">2016/09/19</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/22/文章/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="文章">文章</span>
+            <span class="post-date" title="2019-09-22 23:38:46">2019/09/22</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2019/10/28/es6与node/"
+           data-tag="es6"
+           data-author="" >
+            <span class="post-title" title="es6与node">es6与node</span>
+            <span class="post-date" title="2019-10-28 11:00:51">2019/10/28</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2016/09/17/阶段学习2/"
+           data-tag="阶段学习"
+           data-author="" >
+            <span class="post-title" title="阶段学习2">阶段学习2</span>
+            <span class="post-date" title="2016-09-17 22:27:06">2016/09/17</span>
+        </a>
+        
+        <a  class="面试题 "
+           href="/2019/12/03/vue/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <span class="post-date" title="2019-12-03 14:15:33">2019/12/03</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">vue</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="面试题">面试题</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">vue</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-03 14:28:22'>2019-12-03 14:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#16-RequireJS-和Angular、vue区别"><span class="toc-text">16. RequireJS 和Angular、vue区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-Angular中ng-show-ng-hide与ng-if可以用来作什么？有什么区别？"><span class="toc-text">17. Angular中ng-show/ng-hide与ng-if可以用来作什么？有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-修饰符有哪些"><span class="toc-text">18. 修饰符有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-什么是模块化开发，与组件开发有何区别"><span class="toc-text">19. 什么是模块化开发，与组件开发有何区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-Vue-cil常用的命令行有哪些"><span class="toc-text">20. Vue-cil常用的命令行有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-如何实现自定义指令"><span class="toc-text">21. 如何实现自定义指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-vue中定义一个全局指令"><span class="toc-text">22. vue中定义一个全局指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-Vue-nextTick"><span class="toc-text">23. Vue.nextTick</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center @[toc]><b style="font-size:30px">vue</b></center>
+
+<p><strong>1.</strong> <strong>vue的优缺点</strong>：</p>
+<p><strong>+优点：</strong></p>
+<p>组件化开发</p>
+<p>单页面路由</p>
+<p>丰富的Api方法</p>
+<p>双向的数据绑定</p>
+<p>单向数据流</p>
+<p>易于结合其他第三库</p>
+<p><strong>+缺点</strong>：</p>
+<p>生态系统不够完善</p>
+<p>可扩展性稍差</p>
+<p><strong>2.</strong> <strong>v-if和v-show的区别</strong></p>
+<p><strong>v-if</strong></p>
+<p>动态的向DOM树内添加或者删除DOM元素；“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建；在初始渲染条件为假时，什么也不做。</p>
+<p><strong>v-show</strong></p>
+<p>通过设置DOM元素的display样式属性控制显示和隐藏；不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</p>
+<p><strong>总结</strong>：v-if有更高的切换消耗；v-show有更高的初始渲染消耗。</p>
+<p><strong>二、应用场景</strong></p>
+<p>1、v-if适合运行条件很少改变的情况； v-show适合频繁切换的情况。</p>
+<p>2、对于管理系统权限列表的展示，这里可以使用v-if来渲染，如果使用v-show，对于用户没有的权限，在网页的源码中，仍然能够显示。</p>
+<p>3、特殊情况：在el-table中控制某列的显示与隐藏只能使用v-if。</p>
+<p><strong>3.</strong> <strong>slot插槽什么时候使用</strong></p>
+<p><strong>什么是插槽？</strong></p>
+<p>插槽（Slot）是Vue提出来的一个概念，正如名字一样，插槽用于决定将所携带的内容，插入到指定的某个位置，从而使模板分块，具有模块化的特质和更大的重用性。插槽显不显示、怎样显示是由父组件来控制的，而插槽在哪里显示就由子组件来进行控制</p>
+<p><strong>4.</strong> <strong>v-router的动态传参怎么实现的</strong></p>
+<p>vue-router传参两种方式：params和query</p>
+<p><strong>query 方式传参和接收参数</strong></p>
+<p>this.$route.query.id</p>
+<p>注意：传参是this.$router,接收参数是this.$route 两者区别：</p>
+<p>$router为VueRouter实例，想要导航到不同URL，则使用$router.push方法</p>
+<p>$route为当前router跳转对象，里面可以获取name、path、query、params等</p>
+<p><strong>params方式传参和接收参数</strong></p>
+<p>传参：</p>
+<p>接收参数: this.$route.params.id</p>
+<p>注意:params传参，push里面只能是 name:’xxxx’,不能是path:’/xxx’,因为params只能用name来引入路由，如果这里写成了path，接收参数页面会是undefined！！！</p>
+<p>二者还有点<strong>区别</strong>，可以理解为：<strong>query</strong>相当于<strong>get</strong>请求，页面跳转的时候，可以<strong>在地址栏看到请求参数</strong>，而<strong>params</strong>相当于<strong>post</strong>请求，参数<strong>不会再地址栏中显示</strong></p>
+<p><strong>5.</strong> <strong>vue路由的钩子函数</strong></p>
+<p><strong>1.全局钩子</strong></p>
+<p>主要包括beforeEach和aftrEach,</p>
+<p>​    <strong>beforeEach</strong>函数有三个参数：</p>
+<p>to:router即将进入的路由对象</p>
+<p>from:当前导航即将离开的路由</p>
+<p>next:Function,进行管道中的一个钩子，如果执行完了，则导航的状态就是 confirmed （确认的）；否则为false，终止导航。</p>
+<p>​    afterEach函数不用传next()函数</p>
+<p>这类钩子主要作用于全局,一般用来判断权限,以及以及页面丢失时候需要执行的操作</p>
+<p><strong>1.</strong> <strong>针对单个路由钩子函数</strong></p>
+<p>主要用于写某个指定路由跳转时需要执行的逻辑<br>　　beforeEnter(to, from, next){<br>　　　　console.log(‘beforeEnter’)<br>　　　　next() //正常跳转，不写的话，不会跳转<br>　　}</p>
+<p><strong>3.组件路由</strong></p>
+<p>​    主要包括 beforeRouteEnter和beforeRouteUpdate,beforeRouteLeave,这几个钩子都是写在组件里面也可以传三个参数(to,from,next),作用与前面类似.</p>
+<p><strong>6.</strong> <strong>vuex的五个核心属性:</strong></p>
+<p><strong>store</strong>=&gt; 类似容器，包含应用的大部分状态，一个页面只能有一个store，状态存储是响应式的，不能直接改变store中state的状态，唯一途径是提交（commit）mutations。</p>
+<p><strong>state</strong> =&gt; 存储基本数据 。（可以想象成Store中声明变量的地方）</p>
+<p><strong>getters</strong> =&gt; 从state基本数据派生出的数据 （在Store仓库里，state就是用来存放数据，若是对数据进行处理输出，比如数据要过滤，一般我们可以写到computed中。但是如果很多组件都使用这个过滤后的数据，比如饼状图组件和曲线图组件，我们是否可以把这个数据抽提出来共享？这就是getters存在的意义。getters可以对state里面的数据进行计算操作，它就是state的计算属性。虽然组件内也可以做计算属性，但是getters可以在多个组件之间复用，如果一个状态只在一个组件内使用，可以不用使用getters。）</p>
+<p>mutations =&gt; Store中更改state数据状态的唯一方法。（mutations必须是同步函数）mutations中函数方法会自动接受 state 作为第一个参数，之后参数是actions中调取API得到数据，并回调mutations中方法时根据需求传入的数据。</p>
+<p><strong>actions</strong> =&gt; 请求API方法获取后台数据，然后可以回调函数提交mutaions方法更改state数据状态，使之可以异步。(Action通过提交的 mutation修改state，而不是直接修改state,Action 可以包含任意异步操作。)</p>
+<p><strong>modules</strong> =&gt; 模块化Vuex（将store分割成不同的模块）</p>
+<p><strong>7.</strong> <strong>怎么定义 vue-router 的动态路由? 怎么获取传过来的值</strong><br>答：在 router 目录下的 index.js 文件中，对 path 属性加上 /:id，使用 router 对象的 params.id 获取。</p>
+<p><strong>8.</strong> <strong>生命周期</strong></p>
+<p><strong>beforeCreate</strong>（创建前） 在数据观测和初始化事件还未开始<br><strong>created</strong>（创建后） 完成数据观测，属性和方法的运算，初始化事件，$el属性还没有显示出来<br><strong>beforeMount</strong>（载入前） 在挂载开始之前被调用，相关的render函数首次被调用。实例已完成以下的配置：编译模板，把data里面的数据和模板生成html。注意此时还没有挂载html到页面上。<br><strong>mounted</strong>（载入后） 在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的html内容替换el属性指向的DOM对象。完成模板中的html渲染到html页面中。此过程中进行ajax交互。<br><strong>beforeUpdate</strong>（更新前） 在数据更新之前调用，发生在虚拟DOM重新渲染和打补丁之前。可以在该钩子中进一步地更改状态，不会触发附加的重渲染过程。<br><strong>updated</strong>（更新后） 在由于数据更改导致的虚拟DOM重新渲染和打补丁之后调用。调用时，组件DOM已经更新，所以可以执行依赖于DOM的操作。然而在大多数情况下，应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。<br><strong>beforeDestroy</strong>（销毁前） 在实例销毁之前调用。实例仍然完全可用。<br><strong>destroyed</strong>（销毁后） 在实例销毁之后调用。调用后，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用。</p>
+<p>1.<strong>什么是vue生命周期？</strong>答： Vue 实例从创建到销毁的过程，就是生命周期。从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、销毁等一系列过程，称之为 Vue 的生命周期。</p>
+<p>2.<strong>vue生命周期的作用是什么？</strong><br>答：它的生命周期中有多个事件钩子，让我们在控制整个Vue实例的过程时更容易形成好的逻辑。</p>
+<p>3.<strong>vue生命周期总共有几个阶段？</strong><br>答：它可以总共分为8个阶段：创建前/后, 载入前/后,更新前/后,销毁前/销毁后。</p>
+<p>4<strong>.第一次页面加载会触发哪几个钩子？</strong><br>答：会触发 下面这几个beforeCreate, created, beforeMount, mounted 。</p>
+<p>5.<strong>DOM 渲染在 哪个周期中就已经完成？</strong><br>答：DOM 渲染在 mounted 中就已经完成了。</p>
+<p><strong>9.</strong> <strong>核心是什么？</strong></p>
+<p>数据驱动和组件化思想。</p>
+<p><strong>数据驱动</strong></p>
+<p>在vue中，数据的改变会驱动视图的自动更新。传统的做法是需要手动改变DOM来使得视图更新，而vue只需要改变数据。</p>
+<p><strong>组件</strong></p>
+<p>组件化开发，优点很多，可以很好的降低数据之间的耦合度。将常用的代码封装成组件之后（vue组件封装方法），就能高度的复用，提高代码的可重用性。一个页面/模块可以由多个组件所组成。</p>
+<p>vuex 是一个专门为vue.js应用程序开发的状态管理模式。</p>
+<p><strong>10.</strong> <strong>Vuex有几种属性</strong></p>
+<p>VueX 是一个专门为 Vue.js 应用设计的状态管理架构，统一管理和维护各个vue组件的可变化状态(你可以理解成 vue 组件里的某些 data )。</p>
+<p><strong>state</strong> =&gt; 基本数据 ，存储状态（变量）<br><strong>getters</strong> =&gt; 从基本数据派生的数据 ，对数据获取之前的再次编译，可以理解为state的计算属性。我们在组件中使用 $sotre.getters.fun()<br><strong>mutation</strong>s =&gt; 提交更改数据的方法，同步！在组件中使用$store.commit(‘’,params)。这个和我们组件中的自定义事件类似。<br><strong>actions</strong> =&gt; 像一个装饰器，包裹mutations，使之可以异步。异步操作。在组件中使用是$store.dispath(‘’)<br><strong>modules</strong> =&gt; 模块化Vuex，store的子模块，为了开发大型项目，方便状态管理而使用的。</p>
+<p><strong>11.</strong> <strong>组件间的传值，兄弟组件的传值</strong></p>
+<p><strong>1.父组件与子组件传值</strong><br>父组件传给子组件：子组件通过props方法接受数据;<br>子组件传给父组件：$emit方法传递参数<br><strong>2.非父子组件间的数据传递，兄弟组件传值</strong><br>eventBus，就是创建一个事件中心，相当于中转站，可以用它来传递事件和接收事件。项目比较小时，用这个比较合适。</p>
+<p><strong>12.</strong> <strong>V-model是如何实现的</strong></p>
+<p><strong>13.</strong> <strong>操作dom在哪个阶段</strong></p>
+<p><strong>14.</strong> <strong>页面加载会经过哪个阶段</strong></p>
+<p><strong>从浏览器打开到页面渲染完成，发生了什么事情</strong>？</p>
+<p>浏览器解析-&gt;查询缓存-&gt;dns查询-&gt;建立链接-&gt;服务器处理请求-&gt;服务器发送响应-&gt;客户端收到页面-&gt;解析HTML-&gt;构建渲染树-&gt;开始显示内容(白屏时间)-&gt;首屏内容加载完成(首屏时间)-&gt;用户可交互(DOMContentLoaded)-&gt;加载完成(load)</p>
+<p><strong>1、客户端输入URL并按下回车</strong></p>
+<p><strong>2、浏览器查找当前URL是否存在缓存，并比较缓存是否过期，没有过期的话，直接跳到9</strong></p>
+<p><strong>3、应用层DNS解析URL对应的IP</strong></p>
+<p><strong>4、传输层根据IP建立TCP链接（三次握手）</strong></p>
+<p><strong>5、链接成功后，浏览器发起HTTP请求</strong></p>
+<p><strong>6、服务器处理请求，浏览器接收HTTP响应的资源</strong></p>
+<p><strong>7、关闭应用层TCP链接</strong></p>
+<p><strong>8、客户端浏览器渲染页面，支持缓存的话加入缓存</strong></p>
+<p><strong>9、把加载好的页面返回给用户</strong></p>
+<p><strong>15.</strong> <strong>什么是vdom？</strong></p>
+<p>virtual dom ， 虚拟 DOM</p>
+<p>用 js 模拟DOM结构</p>
+<p><strong>15.1 为什么会存在vdom</strong>？</p>
+<p>DOM操作非常‘昂贵’</p>
+<p>DOM变化的对比，放在 js 层来做（图灵完备语言），提高效率</p>
+<p>提高重绘性能</p>
+<p><strong>昂贵</strong>：<strong>操作DOM具体的成本，说到底是造成浏览器回流reflow和重绘reflow，从而消耗GPU资源。</strong></p>
+<p><strong>回流</strong>：当Render Tree（渲染树）中部分或全部元素的<strong>尺寸、结构</strong>、或某些<strong>属性发生改变</strong>时，浏览器<strong>重新渲染</strong>部分或全部文档的过程称为<strong>回流</strong>。</p>
+<p><strong>会导致回流的操作：</strong></p>
+<p><strong>页面首次渲染</strong></p>
+<p><strong>浏览器窗口大小发生改变</strong></p>
+<p><strong>元素尺寸或位置发生改变</strong></p>
+<p><strong>元素内容变化（文字数量或图片大小等等）</strong></p>
+<p><strong>元素字体大小变化</strong></p>
+<p><strong>添加或者删除可见的DOM元素</strong></p>
+<p><strong>激活CSS伪类（例如：:hover）</strong></p>
+<p><strong>查询某些属性或调用某些方法</strong></p>
+<p><strong>重绘</strong>(Repaint)：当页面中元素<strong>样式</strong>的<strong>改变</strong>并<strong>不影响</strong>它在文档流中的<strong>位置</strong>时（例如：color、background-color、visibility等），浏览器会将新样式赋予给元素并重新绘制它，这个过程称为<strong>重绘</strong>。</p>
+<p><strong>回流比重绘的代价要更高。</strong></p>
+<h2 id="16-RequireJS-和Angular、vue区别"><a href="#16-RequireJS-和Angular、vue区别" class="headerlink" title="16. RequireJS 和Angular、vue区别"></a><strong>16.</strong> RequireJS 和Angular、vue区别</h2><p><strong>RequireJS</strong> 是一个JavaScript模块加载器</p>
+<p>作用：</p>
+<p>1）实现js文件的异步加载，避免网页失去响应；</p>
+<p>2）管理模块之间的依赖性，便于代码的编写和维护。</p>
+<p><strong>Vue</strong>是一套用于构建用户界面的渐进式<a href="https://baike.baidu.com/item/JavaScript/321142" target="_blank" rel="noopener">JavaScript</a>框架</p>
+<p><strong>AngularJS</strong> 前端JS框架，JavaScript 编写的库</p>
+<p><strong>React</strong> JavaScript MVC 框架</p>
+<p><strong>1.vue与AngularJS的区别</strong></p>
+<p><strong>相同点</strong>：</p>
+<p>都支持指令：内置指令和自定义指令。</p>
+<p>都支持过滤器：内置过滤器和自定义过滤器。</p>
+<p>都支持双向数据绑定。</p>
+<p>都不支持低端浏览器。</p>
+<p><strong>不同点：</strong></p>
+<p>1.AngularJS的学习成本高，比如增加了Dependency Injection特性，而Vue.js本身提供的API都比较简单、直观。</p>
+<p>2.在性能上，AngularJS依赖对数据做脏检查，所以Watcher越多越慢。</p>
+<p>Vue.js使用基于依赖追踪的观察并且使用异步队列更新。所有的数据都是独立触发的。</p>
+<p>对于庞大的应用来说，这个优化差异还是比较明显的。</p>
+<p><strong>2.vue与React的区别</strong><br><strong>相同点：</strong><br>React采用特殊的JSX语法，Vue.js在组件开发中也推崇编写.vue特殊文件格式，对文件内容都有一些约定，两者都需要编译后使用；中心思想相同：一切都是组件，组件实例之间可以嵌套；都提供合理的钩子函数，可以让开发者定制化地去处理需求；都不内置列数AJAX，Route等功能到核心包，而是以插件的方式加载；在组件开发中都支持mixins的特性。<br><strong>不同点：</strong><br>React采用的Virtual DOM会对渲染出来的结果做脏检查；Vue.js在模板中提供了指令，过滤器等，可以非常方便，快捷地操作Virtual DOM。</p>
+<h2 id="17-Angular中ng-show-ng-hide与ng-if可以用来作什么？有什么区别？"><a href="#17-Angular中ng-show-ng-hide与ng-if可以用来作什么？有什么区别？" class="headerlink" title="17. Angular中ng-show/ng-hide与ng-if可以用来作什么？有什么区别？"></a><strong>17.</strong> Angular中ng-show/ng-hide与ng-if可以用来作什么？有什么区别？</h2><p>ng-if重新创建元素时用的是它们编译后的状态，如果ng-if内部的代码加载之后被jQuery修改过（例如用addClass），那么当ng-if的表达式值为false时，这个DOM元素会被移除，表达式再次成为true时这个元素及其内部的子元素会被重新插入DOM，此时这些元素的状态会是它们的原始状态，而不是它们上次被移除时的状态。而ng-show和ng-hide则可以保留DOM元素上次修改后的状态<br>作用域方面两者也存在差异，当一个元素被ng-if从DOM中删除时，与其关联的作用域也会被销毁。而且当它重新加入DOM中时，则会生成一个新的作用域，而ng-show和ng-hide则不会</p>
+<h2 id="18-修饰符有哪些"><a href="#18-修饰符有哪些" class="headerlink" title="18. 修饰符有哪些"></a><strong>18.</strong> 修饰符有哪些</h2><p><strong>表单修饰符</strong></p>
+<p><strong>.lazy：光标离开才更新视图</strong></p>
+<p><strong>.trim**</strong>：<strong>**过滤首尾的空格</strong></p>
+<p><strong>.number**</strong>：**先输入数字，会限制你输入的只能是数字。如果你先输入字符串，那它就相当于没有加.number</p>
+<p><strong>.stop**</strong>：**一键阻止事件冒泡，相当于调用了event.stopPropagation()方法。</p>
+<p><strong>.prevent**</strong>：**阻止事件的默认行为，例如，当点击提交按钮时阻止对表单的提交。相当于调用了event.preventDefault()方法。</p>
+<p><strong>注意**</strong>：<strong>修饰符可以同时使用多个,但是可能会因为顺序而有所不同。<br>用 v-on:click.prevent.self 会</strong>阻止所有的点击<strong>，而 v-on:click.self.prevent 只会</strong>阻止对元素自身的点击<strong>。也就是</strong>从左往右判断~**</p>
+<p><strong>.self**</strong>：**当前元素自身时触发处理函数时才会触发函数</p>
+<p><strong>.once：</strong>加上此修饰符之后相应的函数只能触发一次</p>
+<h2 id="19-什么是模块化开发，与组件开发有何区别"><a href="#19-什么是模块化开发，与组件开发有何区别" class="headerlink" title="19. 什么是模块化开发，与组件开发有何区别"></a><strong>19.</strong> 什么是模块化开发，与组件开发有何区别</h2><p><strong>组件</strong>：最初的目的是代码重用，功能相对单一或者独立。在整个系统的代码层次上位于最底层，被其他代码所依赖，所以说组件化是纵向分层。</p>
+<p><strong>模块</strong>：最初的目的是将同一类型的代码整合在一起，所以模块的功能相对复杂，但都同属于一个业务。不同模块之间也会存在依赖关系，但大部分都是业务性的互相跳转，从地位上来说它们都是平级的。</p>
+<h2 id="20-Vue-cil常用的命令行有哪些"><a href="#20-Vue-cil常用的命令行有哪些" class="headerlink" title="20. Vue-cil常用的命令行有哪些"></a><strong>20.</strong> Vue-cil常用的命令行有哪些</h2><p>npm install –global vue-cli    全局安装vue-cli</p>
+<p> vue init webpack  项目名称  新建vue项目</p>
+<p>npm run dev     启动 vue-cli 开发环境的 npm命令</p>
+<p> npm install    下载 node_modules 资源包的命令</p>
+<h2 id="21-如何实现自定义指令"><a href="#21-如何实现自定义指令" class="headerlink" title="21. 如何实现自定义指令"></a><strong>21.</strong> <strong>如何实现自定义指令</strong></h2><p><strong>可以使用Vue.directive( id , definition ) 来定义全局自定义指令</strong></p>
+<p><strong>也可以使用 directives{ id , definition}来定义局部自定义指令</strong></p>
+<p><strong>Vue.directive()传入接受两个参数，id是指指令ID，definition是指定义对象。其中，定义对象可以提供一些钩子函数。</strong></p>
+<h2 id="22-vue中定义一个全局指令"><a href="#22-vue中定义一个全局指令" class="headerlink" title="22. vue中定义一个全局指令"></a><strong>22.</strong> <a href="https://www.jianshu.com/p/f697ba0e0d6a" target="_blank" rel="noopener">vue中定义一个全局指令</a></h2><p>1.使用Vue.directive()定义一个全局指令    Vue.directive(‘指令名称’,{对象})</p>
+<p>2.参数一：指令的名称，定义时指令前面不需要写v-</p>
+<p>3.参数二：是一个对象，该对象中有相关的操作函数</p>
+<p>4.在调用的时候必须写v-</p>
+<p><strong>5.自定义指令中的常用的3个钩子函数：</strong></p>
+<p>​    <strong>5.1bind：</strong></p>
+<p>​      1.指令绑定到元素上回立刻执行bind函数，只执行一次</p>
+<p>​      2.每个函数中第一个参数永远是el，表示绑定指令的元素，el参数是原生js对象</p>
+<p>​      3.通过el.focus()是无法获取焦点的，因为只有插入DOM后才生效</p>
+<p>​    <strong>5.2inserted：</strong></p>
+<p>​      1.inserted表示一个元素，插入到DOM中会执行inserted函数，只触发一次</p>
+<p>​    <strong>5.3updated：</strong></p>
+<p>​      1.当VNode更新的时候会执行updated，可以触发多次</p>
+<p><strong>6.定义一个局部指令</strong></p>
+<p>​    测试案例步骤：</p>
+<p>​    1.首先需要在html中创建一个盒子</p>
+<p>​    2.接着需要通过实例化Vue并且通过el将盒子所对应的id进行绑定</p>
+<p>​    3.在盒子里面所对应的要自定义的标签上通过v-xxx标注</p>
+<pre><code class="js">  局部定义的格式：
+​      directives：{
+​            &#39;xxx&#39;:{
+​                bind:function(el,binding){
+​                el.style.xxx = binding.value
+​            }
+​          }
+​      }</code></pre>
+<p> <strong>7.指令函数的简写</strong></p>
+<pre><code class="js">function等同于将代码写入bind和update里
+​    directive：{    
+​        &#39;xxx&#39;：function(el,binding){
+​            el.style.xxx = binding.value
+​        }
+}</code></pre>
+<h2 id="23-Vue-nextTick"><a href="#23-Vue-nextTick" class="headerlink" title="23. Vue.nextTick"></a><strong>23.</strong> Vue.nextTick</h2><p>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>vue</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="狮子花">狮子花</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-03, 14:15:33</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-03, 14:28:22</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/03/vue/" title="vue">http://zhangyijie110.github.io/2019/12/03/vue/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 狮子花</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#hexo使用说明','#es6','#jquery','#js','#ajax','#html','#函数','#阶段学习','#vue',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
