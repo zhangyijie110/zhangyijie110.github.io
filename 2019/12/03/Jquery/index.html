@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>文章 | Hexo</title>
-  <meta name="keywords" content>
-  <meta name="description" content="文章 | Hexo">
+  <title>Jquery | Hexo</title>
+  <meta name="keywords" content=" jquery ">
+  <meta name="description" content="Jquery | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="H5  1. h5的本地缓存H5本地存储数据 localStorage，sessionStorage的区别: 相同点：  缓存数据比cookie的范围大; 不同点:    Cookie : 一般由服务器生成，可设置失效时间，如果在浏览器端生成cookie，默认是关闭后失效。 一般为4kb   localStorage: 关闭浏览器数据不会消失，除非手动删除数据   sessionStroage：数">
 <meta name="keywords" content="html">
@@ -328,19 +328,31 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-文章" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Jquery" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">文章</h1>
+        <h1 class="article-title">Jquery</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="面试题">面试题</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">jquery</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-22 23:38:46'>2019-09-22 23:38</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-03 09:26:33'>2019-12-03 09:03</time>
         
     </div>
     <div class="article-meta">
@@ -373,7 +385,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Jquery是做什么的？"><span class="toc-text">1.  Jquery是做什么的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Jquery如何处理缓存？"><span class="toc-text">2   Jquery如何处理缓存？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-getscript和-getjson方法有什么区别"><span class="toc-text">3 $getscript和$getjson方法有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Jquery引入css样式的方式"><span class="toc-text">4 Jquery引入css样式的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Jquery和jquery-ui的区别"><span class="toc-text">5. Jquery和jquery-ui的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Jquery的事件冒泡"><span class="toc-text">6. Jquery的事件冒泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-jquery与vue区别"><span class="toc-text">7. jquery与vue区别</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -388,7 +400,54 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <center @[toc]><b style="font-size:30px">Jquery</b></center>
+
+<h2 id="1-Jquery是做什么的？"><a href="#1-Jquery是做什么的？" class="headerlink" title="1.  Jquery是做什么的？"></a><strong>1.</strong>  Jquery是做什么的？</h2><ul>
+<li><p><strong>取得文档中的元素</strong></p>
+</li>
+<li><p><strong>修改页面的外观</strong></p>
+</li>
+<li><p><strong>改变文档的内容</strong></p>
+</li>
+<li><p><strong>响应用户的交互操作</strong></p>
+</li>
+<li><p><strong>为页面添加动态效果</strong></p>
+</li>
+<li><p><strong>无需刷新页面从服务器获取信息</strong></p>
+</li>
+<li><p><strong>简化常见的JavaScript任务</strong></p>
+</li>
+</ul>
+<h2 id="2-Jquery如何处理缓存？"><a href="#2-Jquery如何处理缓存？" class="headerlink" title="2   Jquery如何处理缓存？"></a>2   Jquery如何处理缓存？</h2><p>答：要处理缓存就是禁用浏览器缓存.</p>
+<p>1）通过$.post()方法来获取数据，那么默认就是禁用缓存的。</p>
+<p>2）通过$.get()方法来获取数据，可以通过设置时间戳来避免缓存。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以在URL后面加上+(+<span class="keyword">new</span> <span class="built_in">Date</span>)来增加上时间戳参数</span><br><span class="line">例：$.<span class="keyword">get</span>('ajax.xml?'+(+newDate),function () &#123;</span><br><span class="line">         <span class="comment">//函数内容代码</span></span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>3）通过$.ajax方法来获取数据，只要设置参数cache:false即可。</p>
+<h2 id="3-getscript和-getjson方法有什么区别"><a href="#3-getscript和-getjson方法有什么区别" class="headerlink" title="3 $getscript和$getjson方法有什么区别"></a><strong>3</strong> <strong>$getscript和$getjson方法有什么区别</strong></h2><p>jQuery 提供了一组用于特定异步加载的方法：</p>
+<ul>
+<li><p>$.getScript()，用于加载特定的 JS 文件；</p>
+</li>
+<li><p>$.getJSON()，用于专门加载 JSON 文件</p>
+</li>
+<li><p>$.ajax()是所有 ajax 方法中最底层的方法，所有其他方法都是基于$.ajax()方法的封装。这个方法只有一个参数，传递一个各个功能键值对的对象</p>
+</li>
+</ul>
+<h2 id="4-Jquery引入css样式的方式"><a href="#4-Jquery引入css样式的方式" class="headerlink" title="4 Jquery引入css样式的方式"></a><strong>4</strong> Jquery引入css样式的方式</h2><p>1.行内式    2.内嵌式    3.链入式</p>
+<h2 id="5-Jquery和jquery-ui的区别"><a href="#5-Jquery和jquery-ui的区别" class="headerlink" title="5. Jquery和jquery-ui的区别"></a><strong>5.</strong> Jquery和jquery-ui的区别</h2><p>　(1) jQuery是一个js库，主要提供的功能是选择器，属性修改和事件绑定等等。 　<br>　(2) jQuery UI则是在jQuery的基础上，利用jQuery的扩展性，设计的插件。提供了一些常用的界面元素，诸如对话框、拖动行为、改变大小行为等等。 　<br>　(3) jQuery本身注重于后台，没有漂亮的界面，而jQuery UI则补充了前者的不足，他提供了华丽的展示界面，使人更容易接受。既有强大的后台，又有华丽的前台。jQuery UI是jQuery插件，只不过专指由jQuery官方维护的UI方向的插件。</p>
+<h2 id="6-Jquery的事件冒泡"><a href="#6-Jquery的事件冒泡" class="headerlink" title="6. Jquery的事件冒泡"></a><strong>6.</strong> Jquery的事件冒泡</h2><p>“事件冒泡”：事件开始由最具体的元素接受，然后逐级向上传播</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e.stopPropagation();<span class="comment">//标准浏览器</span></span><br><span class="line">event.canceBubble=<span class="literal">true</span>;<span class="comment">//ie9 之前</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>阻止默认事件： 为了不让 a 点击之后跳转，我们就要给他的点击事件进行阻止</strong> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">e.preventDefault()</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-jquery与vue区别"><a href="#7-jquery与vue区别" class="headerlink" title="7. jquery与vue区别"></a><strong>7.</strong> jquery与vue区别</h2><ul>
+<li><p>jquery是直接操作DOM；使用选择器（$）选取DOM对象，对其进行赋值、取值、事件绑定等操作</p>
+</li>
+<li><p>vue基于一种MVVM模式，使用数据驱动的方式，通过Vue对象将数据和View完全分离开来。对数据进行操作，不在需要引用相应的DOM对象，通过vue对象，将数据和相应的DOM对象相互绑定起来。</p>
+</li>
+</ul>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
     </div>
@@ -397,12 +456,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>文章</p>
+    <p><span class="copy-title">文章标题:</span>Jquery</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="狮子花">狮子花</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-22, 23:38:46</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-22, 23:38:46</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/22/文章/" title="文章">http://yoursite.com/2019/09/22/文章/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-03, 09:03:31</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-03, 09:26:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/03/Jquery/" title="Jquery">http://yoursite.com/2019/12/03/Jquery/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
